@@ -33,7 +33,7 @@ export default function Index() {
           title="Continue"
           color="#02520b"
           onPress={() => Alert.alert('Simple Button pressed')}
-        />
+        />cd 
       </View>
 
       <View style={styles.textContainer2}>
