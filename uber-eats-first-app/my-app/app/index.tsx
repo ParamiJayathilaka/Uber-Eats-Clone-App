@@ -53,7 +53,7 @@ export default function Index() {
           style={styles.appleLogo}
           source={require('../assets/images/apple.png')}
         />
-        <Text style={styles.appleText}>Continue with Google</Text>
+        <Text style={styles.appleText}>Continue with Apple</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={[styles.button, styles.mailBtn]}>
@@ -61,7 +61,7 @@ export default function Index() {
           style={styles.mailLogo}
           source={require('../assets/images/mail.png')}
         />
-        <Text style={styles.mailText}>Continue with Google</Text>
+        <Text style={styles.mailText}>Continue with Mail</Text>
       </TouchableOpacity>
 
     </View>
