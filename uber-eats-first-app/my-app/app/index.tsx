@@ -8,7 +8,25 @@ export default function Index() {
     <View style={styles.backgroundView}>
     
       <View style={styles.textContainer}>
-        <Text style={styles.title}>Enter Your Mobile Number</Text>
+        <Text style={styles.title}>Confirm Your Information</Text>
+      </View>
+
+      <View style={styles.inputContainer1}>
+        <TextInput
+          style={styles.input1}
+          onChangeText={setTextValue}
+          value={textValue}
+          placeholder="FirstName"
+        />
+      </View>
+
+      <View style={styles.inputContainer2}>
+        <TextInput
+          style={styles.input2}
+          onChangeText={setTextValue}
+          value={textValue}
+          placeholder="LastName"
+        />
       </View>
       
 
@@ -20,49 +38,29 @@ export default function Index() {
       </TouchableOpacity>
 
 
-      <View style={styles.inputContainer2}>
+      <View style={styles.inputContainer3}>
         <TextInput
-          style={styles.input2}
+          style={styles.input3}
           onChangeText={setTextValue}
           value={textValue}
           placeholder="+94 Mobile Number"
         />
       </View>
-      <View style={styles.buttonContainer}>
+      <View style={styles.buttonContainer1}>
         <Button
-          title="Continue"
+          title="Next"
           color="#02520b"
           onPress={() => Alert.alert('Simple Button pressed')}
-        />cd 
+        />
       </View>
 
-      <View style={styles.textContainer2}>
-        <Text style={styles.title}>-----------------------------or -----------------------------</Text>
+      <View style={styles.buttonContainer2}>
+        <Button
+          title="Back"
+          color="#02520b"
+          onPress={() => Alert.alert('Simple Button pressed')}
+        />
       </View>
-
-      <TouchableOpacity style={[styles.button, styles.googleBtn]}>
-        <Image
-          style={styles.googleLogo}
-          source={require('../assets/images/google.png')}
-        />
-        <Text style={styles.googleText}>Continue with Google</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={[styles.button, styles.appleBtn]}>
-        <Image
-          style={styles.appleLogo}
-          source={require('../assets/images/apple.png')}
-        />
-        <Text style={styles.appleText}>Continue with Apple</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={[styles.button, styles.mailBtn]}>
-        <Image
-          style={styles.mailLogo}
-          source={require('../assets/images/mail.png')}
-        />
-        <Text style={styles.mailText}>Continue with Mail</Text>
-      </TouchableOpacity>
 
     </View>
   );
@@ -87,6 +85,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
+  button: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    width: 300,
+    alignItems: 'center',
+    top:20,
+    marginTop: 8,
+  },
  
   countryBtn: {
     height: 40,
@@ -96,9 +103,9 @@ const styles = StyleSheet.create({
     color: 'white',
     borderRadius:10,
     position: 'absolute',
-    top: '8.5%',
+    top: '25%',
     width: '20%',
-    left: '5%',
+    left: '6%',
     
   },
   countryLogo:{
@@ -108,11 +115,27 @@ const styles = StyleSheet.create({
     bottom:5,
     
   },
+  inputContainer1: {
+    position: 'absolute',
+    top: '15%',
+    width: '50%',
+    left: '0%',
+    paddingHorizontal: 20,
+  },
+  input1: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    color: 'white',
+    borderRadius:10,
+  },
+
   inputContainer2: {
     position: 'absolute',
-    top: '10%',
-    width: '70%',
-    left: '28%',
+    top: '15%',
+    width: '50%',
+    left: '45%',
     paddingHorizontal: 20,
   },
   input2: {
@@ -123,81 +146,36 @@ const styles = StyleSheet.create({
     color: 'white',
     borderRadius:10,
   },
-  buttonContainer: {
+  inputContainer3: {
     position: 'absolute',
-    top: 110,
-    alignSelf: 'center',
-    width: 300,
-  },
-
-  textContainer2:{
-    position: 'absolute',
-    top: '35%',
-    left:'0%',
-  },
-  button: {
-    paddingVertical: 10,
+    top: '27%',
+    width: '70%',
+    left: '28%',
     paddingHorizontal: 20,
-    borderRadius: 10,
-    width: 300,
-    alignItems: 'center',
-    top:40,
-    marginTop: 8,
   },
-  googleBtn: {
-    borderColor: 'white',
-    borderWidth: 0.5,
-    flexDirection: 'row', 
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  googleText: {
+  input3: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingHorizontal: 10,
     color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginLeft: 10,
+    borderRadius:10,
   },
-  googleLogo: {
-    width: 20,
-    height: 20,
-    right:30,
+  buttonContainer1: {
+    position: 'absolute',
+    top: 200,
+    alignSelf:'flex-end',
+    width: 100,
+    right:15,
   },
 
-  appleBtn: {
-    borderColor: 'white',
-    borderWidth: 0.5,
-    flexDirection: 'row', 
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  appleText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginLeft: 10,
-  },
-  appleLogo: {
-    width: 20,
-    height: 20,
-    right:30,
+  buttonContainer2: {
+    position: 'absolute',
+    top: 200,
+    alignSelf:'flex-end',
+    width: 100,
+    left:15,
   },
 
-  mailBtn: {
-    borderColor: 'white',
-    borderWidth: 0.5,
-    flexDirection: 'row', 
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  mailText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginLeft: 10,
-  },
-  mailLogo: {
-    width: 20,
-    height: 20,
-    right:30,
-  },
+
 });
