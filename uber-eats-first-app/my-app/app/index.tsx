@@ -18,7 +18,7 @@ const stack = createNativeStackNavigator()
 export default function index() {
   return (
     <NavigationContainer independent={true}>
-    <stack.Navigator initialRouteName="Snacks-Page">
+    <stack.Navigator initialRouteName="Beverages-Page">
       <stack.Screen name='login-page' component={login}   options={{
             headerShown: false,
           }}/>

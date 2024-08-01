@@ -17,23 +17,12 @@ export default function BaveragesPage() {
      */}
       </View>
 
-      
-      <View style={styles.promotionContainer}>
-        <Text style={styles.promotionTitle}>Promotions</Text>
-        <View style={styles.promotionItem}>
-          <View style={styles.promotionTextContainer}>
-            <Text style={styles.promotionText}>Today's offer</Text>
-            <Text style={styles.promotionText}>Buy One And Get One Free</Text>
-            <Text style={styles.promotionSubText}>On All Orders above LKR 2000.00</Text>
-          </View>
-          <Image style={styles.promotionImage} source={require('@/assets/images/burgur1.png')} />
-        </View>
-      </View>
+ 
 
       <TextInput style={styles.searchInput} placeholder="Search" />
 
       <ScrollView horizontal style={styles.categoryContainer}>
-        {['All', 'Burger', 'Pizza', 'Shawarma','Dessert'].map(category => (
+        {[ 'Smoothie', 'Mocktail', 'MilkShake','Coffee'].map(category => (
           <TouchableOpacity key={category} style={styles.categoryItem}>
             <Text style={styles.categoryText}>{category}</Text>
           </TouchableOpacity>
@@ -41,11 +30,11 @@ export default function BaveragesPage() {
       </ScrollView>
 
       
-      <Text style={styles.popularTitle}>Popular</Text>
+      <Text style={styles.popularTitle}>Popular Beverage</Text>
       
 
       <View style={styles.popularContainer1}>
-        {[{ name: 'Chicken Burger', price: 'LKR 900.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBF8dCnJ_NYrXCKgDab1o8pCx308xfSWWu5w&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png' },
+        {[{ name: 'Vanila MilkShake', price: 'LKR 1300.00', image: 'https://media.istockphoto.com/id/477470798/photo/ice-cream-milkshake-with-cookie-and-crumbs.jpg?s=612x612&w=0&k=20&c=lIXytK6VEhW6ObuwXrrftrcK3UHTWGesxkSa087E7Yc=' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png' },
          ].map((item, index) => (
           <View key={index} style={styles.popularItem}>
             <Image style={styles.popularImage} source={{ uri: item.image }} />
@@ -60,7 +49,7 @@ export default function BaveragesPage() {
 
       <View style={styles.popularContainer2}>
         
-        {[ { name: 'Hawaiian pizza', price: 'LKR 1800.00', image: 'https://wallpapers.com/images/hd/hawaiian-pizza-sliced-black-background-da06fvyaflve1w9s.jpg',image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+        {[ { name: 'Chocolate MilkShake', price: 'LKR 1300.00', image: 'https://static.vecteezy.com/system/resources/previews/029/639/510/large_2x/delicious-chocolate-milkshake-in-a-glass-on-black-background-generative-ai-photo.jpg',image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
             ].map((item, index) => (
           <View key={index} style={styles.popularItem}>
             <Image style={styles.popularImage} source={{ uri: item.image }} />
@@ -73,7 +62,7 @@ export default function BaveragesPage() {
 
       <View style={styles.popularContainer3}>
         
-        {[      { name: 'Beef Shawarma', price: 'LKR 700.00', image: 'https://png.pngtree.com/thumb_back/fw800/background/20231202/pngtree-delicious-beef-shawarma-kebab-on-a-stylish-black-textured-stone-image_13819092.png',image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png' },
+        {[      { name: 'Berry Smoothie ', price: 'LKR 1200.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7FJwGJ8x1_HwJcA0X12CM-MQKaZZ8FkKKmw&s',image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png' },
          ].map((item, index) => (
           <View key={index} style={styles.popularItem}>
             <Image style={styles.popularImage} source={{ uri: item.image }} />
@@ -86,7 +75,85 @@ export default function BaveragesPage() {
 
       <View style={styles.popularContainer4}>
         
-        {[ { name: 'Peparoni Pizza', price: 'LKR 1800.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbFDi7ucB6js3v-TlnTZe69ZBrG28waBfkGA&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+        {[ { name: 'Avacado Milkshake', price: 'LKR 1300.00', image: 'https://img.freepik.com/premium-photo/composition-avocado-smoothie-cup-fruits-scattered-table-dark-background-generative-ai_63135-5347.jpg' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
+
+      <View style={styles.popularContainer5}>
+        
+        {[ { name: 'Blue Berry Mocktail', price: 'LKR 1400.00', image: 'https://lonumedhu.com/sites/default/files/blueberry-cover_0.jpg' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
+
+      <View style={styles.popularContainer6}>
+        
+        {[ { name: 'Lemon Mocktail', price: 'LKR 1300.00', image: 'https://www.shutterstock.com/image-photo/cocktail-gintonic-lemon-slices-twigs-600nw-2090018071.jpg' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
+
+      <View style={styles.popularContainer7}>
+        
+        {[ { name: 'Hot Chocolate', price: 'LKR 800.00', image: 'https://as2.ftcdn.net/v2/jpg/04/73/67/31/1000_F_473673185_U9MH4cvZxENEpzbKm9fbskgRZ4vK08iz.jpg' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
+
+      <View style={styles.popularContainer8}>
+        
+        {[ { name: 'Orange Mojito', price: 'LKR 1200.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX9jpM1ZwphfAuwvIuzoF62S-LMngZYdKDEw&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
+
+      <View style={styles.popularContainer9}>
+        
+        {[ { name: 'Strawberry Mojito', price: 'LKR 1300.00', image: 'https://c8.alamy.com/comp/2G65J8K/strawberry-mojito-with-lemon-and-mint-isolated-on-black-background-with-reflection-2G65J8K.jpg' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
+
+      <View style={styles.popularContainer10}>
+        
+        {[ { name: 'Boba Drinks', price: 'LKR 950.00', image: 'https://img.freepik.com/premium-photo/milk-tea-with-bubble-tapioca-pearls-black-background_468322-1535.jpg' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
        ].map((item, index) => (
           <View key={index} style={styles.popularItem}>
             <Image style={styles.popularImage} source={{ uri: item.image }} />
@@ -157,7 +224,7 @@ const styles = StyleSheet.create({
   },
   categoryContainer: {
     flexDirection: 'row',
-    padding: 20,
+    padding: 15,
     
   },
   categoryItem: {
@@ -172,66 +239,17 @@ const styles = StyleSheet.create({
     color: 'white',
     
   },
-  promotionContainer: {
-    padding: 20,
-  },
-  promotionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#1cfc08',
-  },
-  promotionItem: {
-    backgroundColor: 'black',
-    padding: 20,
-    borderRadius: 10,
-    marginTop: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderColor: '#10fc08',
-    borderWidth: 1,
-    shadowColor: '#10fc08',
-    shadowOffset: { width: 2, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 3,
-    elevation: 5,
-   
-  },
-  promotionImage: {
-    width: 120,
-    height: 90,
-    marginLeft: 10,
-  },
-  promotionTextContainer: {
-    flex: 1,
-  },
-  promotionText: {
-    fontSize: 16,
-    color: 'white',
-  },
-  promotionSubText: {
-    fontSize: 14,
-    // color: '#888',
-    color: 'white',
-    fontWeight: 'bold',
-
-  },
-
-
-  // popularContainer:{
-  //   fontSize: 14,
-  //   // color: '#888',
-  //   color: 'black',
-  //   fontWeight: 'bold',
-  // },
-
+ 
 
   popularContainer1: {
-    width: Dimensions.get('window').width / 10 - 500,
-    height: 90,
-    // flexDirection: 'column',
-    // alignItems: 'center',
-    // justifyContent: 'flex-start',
-    margin: 30,
+
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
     borderColor: 'green',
     borderWidth: 1,
     borderRadius: 10,
@@ -240,20 +258,21 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 3,
-    elevation: 5,
+    elevation: 10,
     backgroundColor: 'black',
-    marginTop: 10,
     
     
   },
 
   popularContainer2: {
-    width: Dimensions.get('window').width / 10 - 500,
-    height: 90,
-    // flexDirection: 'column',
-    // alignItems: 'center',
-    // justifyContent: 'flex-start',
-    margin: 30,
+    
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
     borderColor: 'green',
     borderWidth: 1,
     borderRadius: 10,
@@ -262,20 +281,22 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 3,
-    elevation: 5,
+    elevation: 10,
     backgroundColor: 'black',
-    marginTop: 10,
+    marginLeft:'auto',
+    marginTop:-210,
     
     
   },
 
   popularContainer3: {
-    width: Dimensions.get('window').width / 10 - 500,
-    height: 90,
-    // flexDirection: 'column',
-    // alignItems: 'center',
-    // justifyContent: 'flex-start',
-    margin: 30,
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
     borderColor: 'green',
     borderWidth: 1,
     borderRadius: 10,
@@ -284,20 +305,20 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 3,
-    elevation: 5,
+    elevation: 10,
     backgroundColor: 'black',
-    marginTop: 10,
     
     
   },
 
   popularContainer4: {
-    width: Dimensions.get('window').width / 10 - 500,
-    height: 90,
-    // flexDirection: 'column',
-    // alignItems: 'center',
-    // justifyContent: 'flex-start',
-    margin: 30,
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
     borderColor: 'green',
     borderWidth: 1,
     borderRadius: 10,
@@ -306,9 +327,145 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 3,
-    elevation: 5,
+    elevation: 10,
     backgroundColor: 'black',
-    marginTop: 10,
+    marginLeft:'auto',
+    marginTop:-210,
+    
+  },
+
+  popularContainer5: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    
+    
+  },
+
+  popularContainer6: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    marginLeft:'auto',
+    marginTop:-210,
+    
+  },
+
+  popularContainer7: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    
+    
+  },
+
+  popularContainer8: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    marginLeft:'auto',
+    marginTop:-210,
+    
+  },
+
+  popularContainer9: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    
+    
+  },
+
+  popularContainer10: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    marginLeft:'auto',
+    marginTop:-210,
     
   },
   popularTitle: {
@@ -318,34 +475,39 @@ const styles = StyleSheet.create({
     marginRight:40,
   },
   popularItem: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
     marginTop: 10,
   },
   popularImage: {
-    width: 80,
-    height: 70,
+    width: 100,
+    height: 100,
     borderRadius: 10,
-    marginTop:-10,
+    marginTop:10,
   },
   popularImage1: {
     width: 20,
     height: 20,
     borderRadius: 10,
-    marginTop:40,
+    marginTop:-40,
+    
+    marginStart:120,
   },
   popularText: {
     fontSize: 16,
-    marginLeft: 10,
-    marginBottom:20,
+    marginLeft: -30,
+    marginBottom:30,
+    marginTop:15,
     color: 'white',
+    fontWeight: 'bold',
     
   },
   popularPrice: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginLeft: 'auto',
+    marginLeft: -30,
     color: 'white',
-    marginBottom:15,
+    marginBottom:10,
+    marginTop:-20,
   },
 });
