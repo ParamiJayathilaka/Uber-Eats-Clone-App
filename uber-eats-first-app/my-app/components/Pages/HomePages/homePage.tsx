@@ -9,22 +9,15 @@ export default function HomePage() {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerContainer}>
-          <Text style={styles.teast}>Taste </Text>
-          <Text style={styles.hub}>hub</Text>
+          <Text style={styles.teast}>Uber</Text>
+          <Text style={styles.hub}>Eats</Text>
         </View>
-        <Image style={styles.profileImage} source={{ uri: 'https://img.freepik.com/premium-photo/shiny-gold-letter-m-plain-white-background-3d-rendering_601748-26755.jpg?ga=GA1.1.1360257794.1717265664&semt=ais_user' }} />
+       
+        {/* <Image style={styles.profileImage} source={require('@/assets/images/boy.png')}  />
+     */}
       </View>
 
-      <TextInput style={styles.searchInput} placeholder="Search" />
-
-      <ScrollView horizontal style={styles.categoryContainer}>
-        {['All', 'Burger', 'Pizza', 'Dessert'].map(category => (
-          <TouchableOpacity key={category} style={styles.categoryItem}>
-            <Text style={styles.categoryText}>{category}</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-
+      
       <View style={styles.promotionContainer}>
         <Text style={styles.promotionTitle}>Promotions</Text>
         <View style={styles.promotionItem}>
@@ -33,9 +26,20 @@ export default function HomePage() {
             <Text style={styles.promotionText}>Free Box of Fries</Text>
             <Text style={styles.promotionSubText}>On All Orders above LKR 2500.00</Text>
           </View>
-          <Image style={styles.promotionImage} source={require('@/assets/images/srilanka.png')} />
+          <Image style={styles.promotionImage} source={require('@/assets/images/burgur1.png')} />
         </View>
       </View>
+
+      <TextInput style={styles.searchInput} placeholder="Search" />
+
+      <ScrollView horizontal style={styles.categoryContainer}>
+        {['All', 'Burger', 'Pizza', 'Shawarma','Dessert'].map(category => (
+          <TouchableOpacity key={category} style={styles.categoryItem}>
+            <Text style={styles.categoryText}>{category}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+
 
       <View style={styles.popularContainer}>
         <Text style={styles.popularTitle}>Popular</Text>
@@ -62,55 +66,66 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
   },
+
+  
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: 'green',
     borderRadius: 10,
+    
     paddingVertical: 5,
     paddingHorizontal: 10,
+    
   },
   teast: {
-    fontSize: 15,
+    fontSize: 30,
     fontWeight: 'bold',
-    color: 'white', // White color for "Teast"
+    color: 'black', // White color for "Teast"
+    backgroundColor:'green',
   },
   hub: {
-    fontSize: 15,
+    fontSize: 30,
     fontWeight: 'bold',
-    backgroundColor: '#FFA500', // Orange background for "Hub"
+    backgroundColor: 'green', // Orange background for "Hub"
     color: 'white', // Black color for "Hub"
-    borderRadius: 5,
+    
     paddingHorizontal: 8,
   },
   profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 70,
+    height: 100,
+   
+    
   },
   searchInput: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#a9ada8',
     margin: 20,
     padding: 10,
     borderRadius: 10,
+    fontSize:15,
+    fontWeight:'bold'
   },
   categoryContainer: {
     flexDirection: 'row',
     padding: 20,
+    
   },
   categoryItem: {
-    marginLeft: 15,
+    marginLeft: 13,
     padding: 10,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#0f4701',
     borderRadius: 10,
+    
   },
   categoryText: {
     fontSize: 16,
     color: 'white',
+    
   },
   promotionContainer: {
     padding: 20,
@@ -118,10 +133,10 @@ const styles = StyleSheet.create({
   promotionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#1cfc08',
   },
   promotionItem: {
-    backgroundColor: '#FFC490',
+    backgroundColor: '#a9ada8',
     padding: 20,
     borderRadius: 10,
     marginTop: 10,
@@ -129,8 +144,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   promotionImage: {
-    width: 80,
-    height: 80,
+    width: 120,
+    height: 90,
     marginLeft: 10,
   },
   promotionTextContainer: {
@@ -143,7 +158,9 @@ const styles = StyleSheet.create({
   promotionSubText: {
     fontSize: 14,
     // color: '#888',
-    color: 'white',
+    color: 'black',
+    fontWeight: 'bold',
+
   },
   popularContainer: {
     padding: 20,
