@@ -23,8 +23,8 @@ export default function HomePage() {
         <View style={styles.promotionItem}>
           <View style={styles.promotionTextContainer}>
             <Text style={styles.promotionText}>Today's offer</Text>
-            <Text style={styles.promotionText}>Free Box of Fries</Text>
-            <Text style={styles.promotionSubText}>On All Orders above LKR 2500.00</Text>
+            <Text style={styles.promotionText}>Buy One And Get One Free</Text>
+            <Text style={styles.promotionSubText}>On All Orders above LKR 2000.00</Text>
           </View>
           <Image style={styles.promotionImage} source={require('@/assets/images/burgur1.png')} />
         </View>
@@ -181,12 +181,20 @@ const styles = StyleSheet.create({
     color: '#1cfc08',
   },
   promotionItem: {
-    backgroundColor: '#a9ada8',
+    backgroundColor: 'black',
     padding: 20,
     borderRadius: 10,
     marginTop: 10,
     flexDirection: 'row',
     alignItems: 'center',
+    borderColor: '#10fc08',
+    borderWidth: 1,
+    shadowColor: '#10fc08',
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 5,
+   
   },
   promotionImage: {
     width: 120,
@@ -198,12 +206,12 @@ const styles = StyleSheet.create({
   },
   promotionText: {
     fontSize: 16,
-    color: 'black',
+    color: 'white',
   },
   promotionSubText: {
     fontSize: 14,
     // color: '#888',
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
 
   },

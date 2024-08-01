@@ -37,7 +37,7 @@ export default function Signup() {
       </View>
 
       <View style={styles.textContainer2}>
-        <Text style={styles.title}>-----------------------------or -----------------------------</Text>
+        <Text style={styles.title}>------------------------------------------------</Text>
       </View>
 
       <TouchableOpacity style={[styles.button, styles.googleBtn]}>
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    top: 110,
+    top: 150,
     alignSelf: 'center',
     width: 300,
   },

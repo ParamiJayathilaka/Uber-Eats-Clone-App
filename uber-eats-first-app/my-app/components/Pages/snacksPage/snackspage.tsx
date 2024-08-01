@@ -1,250 +1,442 @@
-// // import React, { useEffect, useState } from 'react';
-// // import { View, Text, FlatList, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native';
-// // import axios from 'axios';
-// // import { router, useRouter } from 'expo-router';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity, Dimensions} from 'react-native';
 
-// // export default function Sancks() {
-// //   const [menuItems, setMenuItems] = useState([]);
-// //   const [loading, setLoading] = useState(true);
-// //   const [error, setError] = useState(null);
+export default function SnacksPage() {
+  const [textValue, setTextValue] = useState('');
 
-// //   useEffect(() => {
-// //     getAllPizza();
-// //   }, []);
-
-// //   const getAllPizza = async () => {
-// //     try {
-// //       const response = await axios.get('http://192.168.8.100:8080/menu/get/Snack');
-// //       setMenuItems(response.data);
-// //       setLoading(false);
-// //     } catch (error) {
-// //       setError(error.message || 'Error fetching menu items');
-// //       setLoading(false);
-// //     }
-// //   };
+  return (
+  
+    <ScrollView style={styles.container}>
+      <View style={styles.header}>
+        <View style={styles.headerContainer}>
+          <Text style={styles.teast}>Uber</Text>
+          <Text style={styles.hub}>Eats</Text>
+        </View>
+       
+        {/* <Image style={styles.profileImage} source={require('@/assets/images/boy.png')}  />
+     */}
+      </View>
 
  
 
-// //   if (error) {
-// //     return (
-// //       <View style={styles.container}>
-// //         <Text>Error: {error}</Text>
-// //       </View>
-// //     );
-// //   }
+      <TextInput style={styles.searchInput} placeholder="Search" />
 
-// //   const detailClick = (item) => {
-// //     router.push({
-// //       pathname: 'details',
-// //       params: {
-// //         itemImage: item.image,
-// //         itemCategory: item.category,
-// //         itemName: item.itemName,
-// //         price: item.price,
-// //         description: item.description
-// //       }
-// //     });
-// //   };
+      <ScrollView horizontal style={styles.categoryContainer}>
+        {[ 'Sweet', 'Spicy', 'More Spicy'].map(category => (
+          <TouchableOpacity key={category} style={styles.categoryItem}>
+            <Text style={styles.categoryText}>{category}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
 
-// //   return (
-// //     <View style={styles.container}>
-// //       <Text style={styles.menuStyle}>Our Menu</Text>
+      
+      <Text style={styles.popularTitle}>Popular Snacks</Text>
+      
+
+      <View style={styles.popularContainer1}>
+        {[{ name: 'Rools', price: 'LKR 100.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUv347Q7BmABWqenKo-YyA2kLfb6qkbR3HtA&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png' },
+         ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+           
      
-// //       <FlatList
-// //         style={styles.list}
-// //         data={menuItems}
-// //         keyExtractor={(item) => item._id}
-// //         renderItem={({ item }) => (
-// //           <TouchableOpacity style={styles.itemContainer} onPress={() => detailClick(item)}>
-// //             <Image source={{ uri: item.image }} style={styles.image} />
-// //             <View style={styles.textContainer}>
-              
-// //               <Text style={styles.name}>{item.itemName}</Text>
-// //               <Text style={styles.price}>LKR {item.price}.00</Text>
-// //             </View>
-// //           </TouchableOpacity>
-// //         )}
-// //         numColumns={2}
-// //         contentContainerStyle={styles.flatListContainer}
-// //       />
-// //     </View>
-// //   );
-// // };
+          </View>
+        ))}
+      </View>
 
-// // const styles = StyleSheet.create({
-// //   container: {
-// //     flex: 1,
-// //     padding: 10,
-// //     backgroundColor: '#fff',
-// //   },
-// //   list: {
-// //     marginTop: 20,
-// //   },
-// //   menuStyle: {
-// //     fontSize: 24,
-// //     fontWeight: 'bold',
-// //     textAlign: 'center',
-// //     marginTop: 40,
-// //     alignItems: 'center',
-// //   },
-// //   menuList: {
-// //     marginTop: 50,
-// //     flexDirection: 'row',
-// //     alignItems: 'center',
-// //   },
-// //   menuItem: {
-// //     fontSize: 18,
-// //     fontWeight: 'bold',
-// //     marginHorizontal: 30,
-// //     color: 'black',
-// //   },
-// //   selectedMenuItem: {
-// //     color: '#FFA500',
-// //   },
-// //   itemContainer: {
-// //     width: Dimensions.get('window').width / 2 - 20,
-// //     height: 250,
-// //     flexDirection: 'column',
-// //     alignItems: 'center',
-// //     justifyContent: 'center',
-// //     margin: 10,
-// //     borderColor: '#ccc',
-// //     borderWidth: 1,
-// //     borderRadius: 10,
-// //     padding: 10,
-// //     shadowColor: '#000',
-// //     shadowOffset: { width: 0, height: 2 },
-// //     shadowOpacity: 0.8,
-// //     shadowRadius: 3,
-// //     elevation: 5,
-// //     backgroundColor: '#fff',
-// //   },
-// //   image: {
-// //     width: 120,
-// //     height: 120,
-// //     borderRadius: 60,
-// //     marginBottom: 10,
-// //   },
-// //   textContainer: {
-// //     alignItems: 'center',
-// //   },
-// //   category: {
-// //     fontSize: 16,
-// //     color: 'gray',
-// //   },
-// //   name: {
-// //     fontSize: 18,
-// //     fontWeight: 'bold',
-// //     textAlign: 'center',
-// //   },
-// //   price: {
-// //     marginTop: 10,
-// //     fontSize: 17,
-// //     color: 'gray',
-// //     textAlign: 'center',
-// //   },
-// //   flatListContainer: {
-// //     alignItems: 'center',
-// //   },
-// // });
+      <View style={styles.popularContainer2}>
+        
+        {[ { name: 'Patis', price: 'LKR 50.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGH7qVsC88lmltTKssnAOMFkM_tMSqb4tdAw&s',image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+            ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
 
-// // export default Sancks;
+      <View style={styles.popularContainer3}>
+        
+        {[      { name: 'Parippu Vada', price: 'LKR 70.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB7Mqk41XtLw_WQQGIiPQwmI_djWmsBPE2vQ&s',image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png' },
+         ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
 
-// /////////////////////////////////////////////////////////////////////////////////////////////
+      <View style={styles.popularContainer4}>
+        
+        {[ { name: 'Udu Vada', price: 'LKR 1800.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn_hhAcJ3KWkVmrLxDSymSa-o9iXRPwctoZQ&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
 
-// import React from 'react';
-// import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
-// import { Card, Button } from 'react-native-elements';
+      <View style={styles.popularContainer5}>
+        
+        {[ { name: 'Samosa', price: 'LKR 1800.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdEDoOl6ZKEt8gFKPrXOb2Hw6wMfja-ruLdg&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
 
-// const beverages = [
-//   {
-//     name: 'Pineapple Juice',
-//     price: 'LKR 600.00',
-//     image: require('./path-to-pineapple-image.jpg'), // Replace with your image path
-//   },
-//   {
-//     name: 'Watermelon Juice',
-//     price: 'LKR 400.00',
-//     image: require('./path-to-watermelon-image.jpg'), // Replace with your image path
-//   },
-//   {
-//     name: 'Papaya Juice',
-//     price: 'LKR 400.00',
-//     image: require('./path-to-papaya-image.jpg'), // Replace with your image path
-//   },
-//   {
-//     name: 'Apple Juice',
-//     price: 'LKR 600.00',
-//     image: require('./path-to-apple-image.jpg'), // Replace with your image path
-//   },
-// ];
+      <View style={styles.popularContainer6}>
+        
+        {[ { name: 'Potato Chips', price: 'LKR 1800.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHzJqV6SPI7e2Th5mNeGywj_M5L6kqffabPw&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
 
-// export default function App() {
-//   return (
-//     <ScrollView style={styles.container}>
-//       <Text style={styles.headerText}>Our Menu</Text>
-//       <View style={styles.menuCategories}>
-//         <Text style={styles.categoryText}>Meals</Text>
-//         <Text style={styles.categoryText}>Beverages</Text>
-//         <Text style={styles.categoryText}>Snacks</Text>
-//       </View>
-//       <View style={styles.cardContainer}>
-//         {beverages.map((beverage, index) => (
-//           <Card key={index} containerStyle={styles.card}>
-//             <Image source={beverage.image} style={styles.image} />
-//             <Text style={styles.title}>{beverage.name}</Text>
-//             <Text style={styles.price}>{beverage.price}</Text>
-//           </Card>
-//         ))}
-//       </View>
-//     </ScrollView>
-//   );
-// }
+      <View style={styles.popularContainer7}>
+        
+        {[ { name: 'Pani Walalu', price: 'LKR 1800.00', image: 'https://foodvoyageur.com/wp-content/uploads/2021/04/Pani-walalu12-1024x683-1.webp' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//   },
-//   headerText: {
-//     fontSize: 24,
-//     fontWeight: 'bold',
-//     textAlign: 'center',
-//     marginVertical: 20,
-//   },
-//   menuCategories: {
-//     flexDirection: 'row',
-//     justifyContent: 'space-around',
-//     marginVertical: 10,
-//   },
-//   categoryText: {
-//     fontSize: 18,
-//     color: '#f0a500',
-//   },
-//   cardContainer: {
-//     flexDirection: 'row',
-//     flexWrap: 'wrap',
-//     justifyContent: 'space-around',
-//   },
-//   card: {
-//     borderRadius: 10,
-//     padding: 10,
-//     marginVertical: 10,
-//     width: '40%',
-//   },
-//   image: {
-//     width: '100%',
-//     height: 100,
-//     borderRadius: 10,
-//   },
-//   title: {
-//     fontSize: 16,
-//     fontWeight: 'bold',
-//     marginTop: 10,
-//   },
-//   price: {
-//     fontSize: 14,
-//     color: '#888',
-//     marginTop: 5,
-//   },
-// });
+      <View style={styles.popularContainer8}>
+        
+        {[ { name: 'Vatalappan', price: 'LKR 400.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvoawGpu52K7dAoY3jmBrQ82sf4ZYJWw46yA&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+       ].map((item, index) => (
+          <View key={index} style={styles.popularItem}>
+            <Image style={styles.popularImage} source={{ uri: item.image }} />
+            <Text style={styles.popularText}>{item.name}</Text>
+            <Text style={styles.popularPrice}>{item.price}</Text>
+            <Image style={styles.popularImage1} source={{ uri: item.image1 }} />
+          </View>
+        ))}
+      </View>
+
+      
+
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    backgroundColor: 'black',
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+
+  
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'green',
+    borderRadius: 10,
+    
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    
+  },
+  teast: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'black', // White color for "Teast"
+    backgroundColor:'green',
+  },
+  hub: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    backgroundColor: 'green', // Orange background for "Hub"
+    color: 'white', // Black color for "Hub"
+    
+    paddingHorizontal: 8,
+  },
+  profileImage: {
+    width: 70,
+    height: 100,
+   
+    
+  },
+  searchInput: {
+    backgroundColor: '#a9ada8',
+    margin: 20,
+    padding: 10,
+    borderRadius: 10,
+    fontSize:15,
+    fontWeight:'bold'
+  },
+  categoryContainer: {
+    flexDirection: 'row',
+    padding: 20,
+    
+  },
+  categoryItem: {
+    marginLeft: 13,
+    padding: 10,
+    backgroundColor: '#0f4701',
+    borderRadius: 10,
+    
+  },
+  categoryText: {
+    fontSize: 16,
+    color: 'white',
+    
+  },
+ 
+
+  popularContainer1: {
+
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    
+    
+  },
+
+  popularContainer2: {
+    
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    marginLeft:'auto',
+    marginTop:-210,
+    
+    
+  },
+
+  popularContainer3: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    
+    
+  },
+
+  popularContainer4: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    marginLeft:'auto',
+    marginTop:-210,
+    
+  },
+
+  popularContainer5: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    
+    
+  },
+
+  popularContainer6: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    marginLeft:'auto',
+    marginTop:-210,
+    
+  },
+
+  popularContainer7: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    
+    
+  },
+
+  popularContainer8: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width / 2 - 20,
+    height: 200,
+   
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: 'white',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 10,
+    backgroundColor: 'black',
+    marginLeft:'auto',
+    marginTop:-210,
+    
+  },
+  popularTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+    marginRight:40,
+  },
+  popularItem: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  popularImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 10,
+    marginTop:10,
+  },
+  popularImage1: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    marginTop:-40,
+    
+    marginStart:120,
+  },
+  popularText: {
+    fontSize: 16,
+    marginLeft: -30,
+    marginBottom:30,
+    marginTop:15,
+    color: 'white',
+    fontWeight: 'bold',
+    
+  },
+  popularPrice: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginLeft: -30,
+    color: 'white',
+    marginBottom:10,
+    marginTop:-20,
+  },
+});

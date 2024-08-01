@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: 300,
     alignItems: 'center',
-    top:20,
+    top:10,
     marginTop: 8,
   },
  
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer1: {
     position: 'absolute',
-    top: 200,
+    top:300,
     alignSelf:'flex-end',
     width: 100,
     right:15,
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
 
   buttonContainer2: {
     position: 'absolute',
-    top: 200,
+    top: 300,
     alignSelf:'flex-end',
     width: 100,
     left:15,

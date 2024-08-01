@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity, Dimensions} from 'react-native';
 
-export default function BaveragesPage() {
+export default function MealsPage() {
   const [textValue, setTextValue] = useState('');
 
   return (
