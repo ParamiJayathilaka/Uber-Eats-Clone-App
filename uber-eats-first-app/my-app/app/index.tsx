@@ -1,53 +1,56 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+  import login from '@/components/Pages/LoginPage/login';
+import Signup from '@/components/Pages/SignUpPage/signup';
+import HomeScreen from '@/components/Pages/HomePages/homePage';
+import Entrance from '@/components/Pages/EntrancePages/enterpage';
+import ConformLog from '@/components/Pages/ConformLoginPage/confirmLogin';
 
-export default function Index() {
+
+const stack = createNativeStackNavigator()
+
+
+export default function index() {
   return (
-    <View style={styles.backgroundView}>
-      <Image
-        style={styles.tinyLogo}
-        source={require('../assets/images/enter.png')}
-      />
+    <NavigationContainer independent={true}>
+    <stack.Navigator initialRouteName="Home-Page">
+      <stack.Screen name='login-page' component={login}   options={{
+            headerShown: false,
+          }}/>
+      <stack.Screen name='Signup-Page' component={Signup} options={{
+            headerShown: false,
+      }}/>
+       <stack.Screen name='Home-Page' component={HomeScreen} options={{
+            headerShown: false,
+      }}/>
+      <stack.Screen name='Entrance-Pages' component={Entrance} options={{
+            headerShown: false,
+      }}/>
+     <stack.Screen name='ConfirmLog-Page' component={ConformLog} options={{
+            headerShown: false,
+      }}/>
+      {/* <stack.Screen name='Bavarage-Page' component={Bavarage} options={{
+
+      }} */}
+   
+     
+      
+    </stack.Navigator>
+
     
-    <View style={styles.buttonContainer1}>
-        <Button
-          title="Go"
-          color="#010d00"
-          onPress={() => Alert.alert('Simple Button pressed')}
-        />
-      </View>
-    </View>
-  );
+   </NavigationContainer>
+   
+  )
 }
 
 const styles = StyleSheet.create({
-  backgroundView: {
+  container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-  },
-  tinyLogo: {
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-  },
-  
-  buttonContainer: {
-    position: 'absolute',
-    bottom: 20, 
-    alignSelf: 'center',
-    width: 300,
- 
+    backgroundColor: "#000000",
+    alignItems: "center",
+    justifyContent: "center",
   },
 
-  buttonContainer1: {
-    position: 'absolute',
-    top: 450,
-    alignSelf:'flex-end',
-    width: 50,
-    right:15,
-   
-  },
-});
-
+})

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, Button, Alert } from 'react-native';
+import { Text, View, StyleSheet, Image, Pressable } from 'react-native';
 
-export default function Index() {
+export default function Login({ navigation }: { navigation: any }) {
   return (
     <View style={styles.backgroundView}>
       <Image
         style={styles.tinyLogo}
-        source={require('../assets/images/login1.jpg')}
+        source={require('@/assets/images/login1.jpg')}
       />
       <View style={styles.textContainer}>
         <Text style={styles.title}>Uber Eats</Text>
@@ -14,13 +14,14 @@ export default function Index() {
       <Text style={styles.title1}>
         Get Started With Uber Eats
       </Text>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Continue "
-          color="#02520b"
-          onPress={() => Alert.alert('Simple Button pressed')}
-        />
-      </View>
+    
+      <Pressable style={styles.buttonContainer} 
+        onPress={() => {
+            navigation.navigate("Signup-Page");
+          }}
+      >
+        <Text style={styles.title3}>Continue</Text>
+      </Pressable>
     </View>
   );
 }
@@ -56,11 +57,20 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   buttonContainer: {
+    height: 50,
+    backgroundColor: '#02520b',
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
     position: 'absolute',
     bottom: 20, 
     alignSelf: 'center',
     width: 300,
-    
+  },
+  title3: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
-

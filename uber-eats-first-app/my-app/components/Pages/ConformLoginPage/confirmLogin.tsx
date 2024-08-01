@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, Button, Alert, TextInput ,Image,TouchableOpacity} from 'react-native';
 
-export default function Index() {
+export default function ConformLog() {
   const [textValue, setTextValue] = useState('');
 
   return (
@@ -33,7 +33,7 @@ export default function Index() {
       <TouchableOpacity style={[styles.button, styles.countryBtn]}>
         <Image
           style={styles.countryLogo}
-          source={require('../assets/images/srilanka.png')}
+          source={require('@/assets/images/srilanka.png')}
         />
       </TouchableOpacity>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, Button, Alert, TextInput ,Image,TouchableOpacity} from 'react-native';
 
-export default function Index() {
+export default function Signup() {
   const [textValue, setTextValue] = useState('');
 
   return (
@@ -15,7 +15,7 @@ export default function Index() {
       <TouchableOpacity style={[styles.button, styles.countryBtn]}>
         <Image
           style={styles.countryLogo}
-          source={require('../assets/images/srilanka.png')}
+          source={require('@/assets/images/srilanka.png')}
         />
       </TouchableOpacity>
 
@@ -33,7 +33,7 @@ export default function Index() {
           title="Continue"
           color="#02520b"
           onPress={() => Alert.alert('Simple Button pressed')}
-        />cd 
+        />
       </View>
 
       <View style={styles.textContainer2}>
@@ -43,7 +43,7 @@ export default function Index() {
       <TouchableOpacity style={[styles.button, styles.googleBtn]}>
         <Image
           style={styles.googleLogo}
-          source={require('../assets/images/google.png')}
+          source={require('@/assets/images/google.png')}
         />
         <Text style={styles.googleText}>Continue with Google</Text>
       </TouchableOpacity>
@@ -51,7 +51,7 @@ export default function Index() {
       <TouchableOpacity style={[styles.button, styles.appleBtn]}>
         <Image
           style={styles.appleLogo}
-          source={require('../assets/images/apple.png')}
+          source={require('@/assets/images/apple.png')}
         />
         <Text style={styles.appleText}>Continue with Apple</Text>
       </TouchableOpacity>
@@ -59,7 +59,7 @@ export default function Index() {
       <TouchableOpacity style={[styles.button, styles.mailBtn]}>
         <Image
           style={styles.mailLogo}
-          source={require('../assets/images/mail.png')}
+          source={require('@/assets/images/mail.png')}
         />
         <Text style={styles.mailText}>Continue with Mail</Text>
       </TouchableOpacity>
