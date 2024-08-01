@@ -75,7 +75,7 @@ export default function SnacksPage() {
 
       <View style={styles.popularContainer4}>
         
-        {[ { name: 'Udu Vada', price: 'LKR 1800.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn_hhAcJ3KWkVmrLxDSymSa-o9iXRPwctoZQ&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+        {[ { name: 'Udu Vada', price: 'LKR 80.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn_hhAcJ3KWkVmrLxDSymSa-o9iXRPwctoZQ&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
        ].map((item, index) => (
           <View key={index} style={styles.popularItem}>
             <Image style={styles.popularImage} source={{ uri: item.image }} />
@@ -88,7 +88,7 @@ export default function SnacksPage() {
 
       <View style={styles.popularContainer5}>
         
-        {[ { name: 'Samosa', price: 'LKR 1800.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdEDoOl6ZKEt8gFKPrXOb2Hw6wMfja-ruLdg&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+        {[ { name: 'Samosa', price: 'LKR 80.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdEDoOl6ZKEt8gFKPrXOb2Hw6wMfja-ruLdg&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
        ].map((item, index) => (
           <View key={index} style={styles.popularItem}>
             <Image style={styles.popularImage} source={{ uri: item.image }} />
@@ -101,7 +101,7 @@ export default function SnacksPage() {
 
       <View style={styles.popularContainer6}>
         
-        {[ { name: 'Potato Chips', price: 'LKR 1800.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHzJqV6SPI7e2Th5mNeGywj_M5L6kqffabPw&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+        {[ { name: 'Potato Chips', price: 'LKR 400.00', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHzJqV6SPI7e2Th5mNeGywj_M5L6kqffabPw&s' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
        ].map((item, index) => (
           <View key={index} style={styles.popularItem}>
             <Image style={styles.popularImage} source={{ uri: item.image }} />
@@ -114,7 +114,7 @@ export default function SnacksPage() {
 
       <View style={styles.popularContainer7}>
         
-        {[ { name: 'Pani Walalu', price: 'LKR 1800.00', image: 'https://foodvoyageur.com/wp-content/uploads/2021/04/Pani-walalu12-1024x683-1.webp' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
+        {[ { name: 'Pani Walalu', price: 'LKR 200.00', image: 'https://foodvoyageur.com/wp-content/uploads/2021/04/Pani-walalu12-1024x683-1.webp' ,image1:'https://cdn-icons-png.flaticon.com/128/4315/4315609.png'},
        ].map((item, index) => (
           <View key={index} style={styles.popularItem}>
             <Image style={styles.popularImage} source={{ uri: item.image }} />
