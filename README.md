@@ -3,4 +3,5 @@
 ![conform login](https://github.com/ParamiJayathilaka/Uber-Eats-Clone-App/assets/125114739/d714fac7-2e83-4aaa-85f2-adf7aa9dff5a)
 ![enter1](https://github.com/ParamiJayathilaka/Uber-Eats-Clone-App/assets/125114739/11530307-6f53-4170-8d8e-4edcda80da40)
 
+![snacks](https://github.com/user-attachments/assets/07d9277f-95ae-4434-a2d5-f4b8d687156a)
 
